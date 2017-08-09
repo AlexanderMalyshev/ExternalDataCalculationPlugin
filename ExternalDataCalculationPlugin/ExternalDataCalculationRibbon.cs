@@ -12,5 +12,11 @@ namespace ExternalDataCalculationPlugin
         {
 
         }
+
+        private void CreateNewJobButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            SubmitNewJobForm snjf = new SubmitNewJobForm();
+            snjf.Show();
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace IntegrationTests
         public void TestMessageQueue()
         {
             JobManager jm = new JobManager();
-            jm.AddJobToQueue(new Job("MyJob", "SQL", "select * from main_table", "azure_tale"));
+            jm.AddJobToQueue(new Job(new Random().Next(), "MyJob", "SQL", "select * from main_table", "azure_tale"));
 
             Job job = jm.RetrieveNewJob();
 

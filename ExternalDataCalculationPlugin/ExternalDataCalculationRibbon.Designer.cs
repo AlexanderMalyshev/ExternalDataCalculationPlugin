@@ -37,12 +37,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalDataCalculationRibbon));
             this.ExternalCalculationTab = this.Factory.CreateRibbonTab();
             this.CreateJobGroup = this.Factory.CreateRibbonGroup();
+            this.CreateNewJobButton = this.Factory.CreateRibbonButton();
             this.JobStatusGroup = this.Factory.CreateRibbonGroup();
             this.JobStatusDropDown = this.Factory.CreateRibbonDropDown();
             this.JobActionsGroup = this.Factory.CreateRibbonGroup();
-            this.RestartButton = this.Factory.CreateRibbonButton();
-            this.CreateNewJobButton = this.Factory.CreateRibbonButton();
             this.InsertButton = this.Factory.CreateRibbonButton();
+            this.RestartButton = this.Factory.CreateRibbonButton();
             this.CancelButton = this.Factory.CreateRibbonButton();
             this.ExternalCalculationTab.SuspendLayout();
             this.CreateJobGroup.SuspendLayout();
@@ -63,6 +63,15 @@
             this.CreateJobGroup.Items.Add(this.CreateNewJobButton);
             this.CreateJobGroup.Label = "Create Job";
             this.CreateJobGroup.Name = "CreateJobGroup";
+            // 
+            // CreateNewJobButton
+            // 
+            this.CreateNewJobButton.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.CreateNewJobButton.Image = global::ExternalDataCalculationPlugin.Properties.Resources.hammer_and_key;
+            this.CreateNewJobButton.Label = "Create New Job";
+            this.CreateNewJobButton.Name = "CreateNewJobButton";
+            this.CreateNewJobButton.ShowImage = true;
+            this.CreateNewJobButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.CreateNewJobButton_Click);
             // 
             // JobStatusGroup
             // 
@@ -85,22 +94,6 @@
             this.JobActionsGroup.Label = "Job Actions";
             this.JobActionsGroup.Name = "JobActionsGroup";
             // 
-            // RestartButton
-            // 
-            this.RestartButton.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.RestartButton.Image = global::ExternalDataCalculationPlugin.Properties.Resources.restart;
-            this.RestartButton.Label = "Restart";
-            this.RestartButton.Name = "RestartButton";
-            this.RestartButton.ShowImage = true;
-            // 
-            // CreateNewJobButton
-            // 
-            this.CreateNewJobButton.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.CreateNewJobButton.Image = global::ExternalDataCalculationPlugin.Properties.Resources.hammer_and_key;
-            this.CreateNewJobButton.Label = "Create New Job";
-            this.CreateNewJobButton.Name = "CreateNewJobButton";
-            this.CreateNewJobButton.ShowImage = true;
-            // 
             // InsertButton
             // 
             this.InsertButton.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -108,6 +101,14 @@
             this.InsertButton.Label = "Insert";
             this.InsertButton.Name = "InsertButton";
             this.InsertButton.ShowImage = true;
+            // 
+            // RestartButton
+            // 
+            this.RestartButton.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.RestartButton.Image = global::ExternalDataCalculationPlugin.Properties.Resources.restart;
+            this.RestartButton.Label = "Restart";
+            this.RestartButton.Name = "RestartButton";
+            this.RestartButton.ShowImage = true;
             // 
             // CancelButton
             // 

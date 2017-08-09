@@ -29,8 +29,6 @@ namespace SharedInterface
 
         public void AddNewJob(JobState js)
         {
-            js.states.Add("Added", DateTime.Now);
-
             TableOperation insertOperation = TableOperation.Insert(js);
             table.Execute(insertOperation);
         }
