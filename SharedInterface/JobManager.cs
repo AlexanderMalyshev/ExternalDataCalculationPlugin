@@ -29,6 +29,7 @@ namespace SharedInterface
         {
             var message = client.Receive();
             Job job = JsonConvert.DeserializeObject<Job>(message.GetBody<String>());
+            message.Complete();
 
             return job;
         }

@@ -37,8 +37,8 @@ namespace SharedInterface
         {
             js.states.Add(state, DateTime.Now);
 
-            TableOperation insertOrReplaceOperation = TableOperation.InsertOrReplace(js);
-            table.Execute(insertOrReplaceOperation);
+            TableOperation mergeOperation = TableOperation.Merge(js);
+            table.Execute(mergeOperation);
         }
     }
 }

@@ -2,6 +2,7 @@
 using SharedInterface;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace IntegrationTests
 {
@@ -29,11 +30,12 @@ namespace IntegrationTests
             var js = new JobState(new Random().Next(), "MyJob");
 
             jsm.AddNewJob(js);
+            jsm.AddNewState(js, "Added");
 
             List<JobState> lj = jsm.GetListOfJobWithLastState();
                 
             Assert.IsTrue(lj.Contains(js));
-
+            
             jsm.AddNewState(js, "Started");
 
             Assert.IsTrue(lj.Contains(js));

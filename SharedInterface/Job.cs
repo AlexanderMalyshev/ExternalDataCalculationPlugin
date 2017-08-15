@@ -6,7 +6,7 @@ namespace SharedInterface
 {
     public class Job
     {
-        public int id { get; }
+        public int id { get; set; }
         public string name { get; set; }
         public string from { get; set; }
         public string query { get; set; }

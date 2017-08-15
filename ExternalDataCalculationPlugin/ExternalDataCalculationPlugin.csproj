@@ -213,6 +213,15 @@
   <ItemGroup>
     <None Include="Resources\restart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedInterface\SharedInterface.csproj">
+      <Project>{C902D8A8-2FEC-4B91-A7D1-2CC753BBBEB9}</Project>
+      <Name>SharedInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

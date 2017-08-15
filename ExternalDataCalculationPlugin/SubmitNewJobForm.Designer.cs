@@ -46,6 +46,7 @@
             this.JobNameTextBox.Name = "JobNameTextBox";
             this.JobNameTextBox.Size = new System.Drawing.Size(800, 38);
             this.JobNameTextBox.TabIndex = 0;
+            this.JobNameTextBox.Text = "MyJob";
             // 
             // FromTextBox
             // 
@@ -53,6 +54,7 @@
             this.FromTextBox.Name = "FromTextBox";
             this.FromTextBox.Size = new System.Drawing.Size(800, 38);
             this.FromTextBox.TabIndex = 1;
+            this.FromTextBox.Text = "hsql::xlextdat10r2\\FoodMarket\\Transactions";
             // 
             // ToTextBox
             // 
@@ -60,6 +62,8 @@
             this.ToTextBox.Name = "ToTextBox";
             this.ToTextBox.Size = new System.Drawing.Size(800, 38);
             this.ToTextBox.TabIndex = 2;
+            this.ToTextBox.Text = "aztbl::https://excelexternalcalcstorage.table.core.windows.net/agregatedTransacti" +
+    "ons";
             // 
             // QueryTextBox
             // 
@@ -68,6 +72,7 @@
             this.QueryTextBox.Name = "QueryTextBox";
             this.QueryTextBox.Size = new System.Drawing.Size(800, 438);
             this.QueryTextBox.TabIndex = 3;
+            this.QueryTextBox.Text = "Select * from Transactions";
             // 
             // CancelJobWindowButton
             // 
@@ -87,6 +92,7 @@
             this.SubmitJobWindowButton.TabIndex = 5;
             this.SubmitJobWindowButton.Text = "Submit";
             this.SubmitJobWindowButton.UseVisualStyleBackColor = true;
+            this.SubmitJobWindowButton.Click += new System.EventHandler(this.SubmitJobWindowButton_Click);
             // 
             // JobNameLabel
             // 

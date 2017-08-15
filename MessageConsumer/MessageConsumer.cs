@@ -10,6 +10,7 @@ namespace MessageConsumer
 {
     class MessageConsumer
     {
+        const int TMO = 20000;
         static void Main(string[] args)
         {
             JobStateManager jsm = new JobStateManager();
@@ -19,9 +20,11 @@ namespace MessageConsumer
             {
                 Console.Out.WriteLine("waiting for messages");
 
-                Thread.Sleep(10000);
+                Thread.Sleep(TMO);
 
                 Job job = mc.RetrieveNewJob();
+                if (job.id == 0)
+                    continue;
 
                 Console.Out.WriteLine("Job:");
                 Console.Out.WriteLine("\t name: " + job.name);
@@ -30,18 +33,20 @@ namespace MessageConsumer
                 Console.Out.WriteLine("\t to: " + job.to);
 
                 JobState js = new JobState(job.id, job.name);
+
+
                 jsm.AddNewJob(js);
-                jsm.AddNewState(js, "Received");
+                jsm.AddNewState(js, "Added");
 
-                Thread.Sleep(10000);
+                Thread.Sleep(TMO);
 
-                jsm.AddNewState(js, "In progress");
+                jsm.AddNewState(js, "Going");
 
-                Thread.Sleep(10000);
+                Thread.Sleep(TMO);
 
                 jsm.AddNewState(js, "Done");
 
-                Thread.Sleep(10000);
+                Thread.Sleep(TMO);
             }
         }
     }
