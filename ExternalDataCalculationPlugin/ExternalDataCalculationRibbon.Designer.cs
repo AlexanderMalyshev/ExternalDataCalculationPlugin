@@ -45,7 +45,6 @@
             this.InsertButton = this.Factory.CreateRibbonButton();
             this.RestartButton = this.Factory.CreateRibbonButton();
             this.CancelButton = this.Factory.CreateRibbonButton();
-            this.group1 = this.Factory.CreateRibbonGroup();
             this.ExternalCalculationTab.SuspendLayout();
             this.CreateJobGroup.SuspendLayout();
             this.JobStatusGroup.SuspendLayout();
@@ -57,7 +56,6 @@
             this.ExternalCalculationTab.Groups.Add(this.CreateJobGroup);
             this.ExternalCalculationTab.Groups.Add(this.JobStatusGroup);
             this.ExternalCalculationTab.Groups.Add(this.JobActionsGroup);
-            this.ExternalCalculationTab.Groups.Add(this.group1);
             this.ExternalCalculationTab.Label = "External Calculation";
             this.ExternalCalculationTab.Name = "ExternalCalculationTab";
             // 
@@ -114,6 +112,7 @@
             this.InsertButton.Label = "Insert";
             this.InsertButton.Name = "InsertButton";
             this.InsertButton.ShowImage = true;
+            this.InsertButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.InsertButton_Click);
             // 
             // RestartButton
             // 
@@ -130,11 +129,6 @@
             this.CancelButton.Label = "Cancel";
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.ShowImage = true;
-            // 
-            // group1
-            // 
-            this.group1.Label = "group1";
-            this.group1.Name = "group1";
             // 
             // ExternalDataCalculationRibbon
             // 
@@ -165,7 +159,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton InsertButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton RestartButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton CancelButton;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton RefreshJobStateButton;
     }
 
